@@ -64,6 +64,7 @@ export default function Home() {
 
   const loading = isLoading || isDebouncing;
   const areUsersDisplayed = !isDebouncing && !error;
+  const noUsersFound = username.length >= 1 && users.length < 1 && !loading;
 
   return (
     <Box
@@ -91,6 +92,7 @@ export default function Home() {
           </p>
         )}
         {error && <p className='text-center'>{error.message}</p>}
+        {noUsersFound && <p className='text-center'>No users fond</p>}
         {areUsersDisplayed && (
           <InfiniteScroll
             dataLength={users.length}
