@@ -98,7 +98,7 @@ export default function Home() {
           </p>
         )}
         {error && <p className='text-center'>{error.message}</p>}
-        {noUsersFound && <p className='text-center'>No users fond</p>}
+        {noUsersFound && <p className='text-center'>No users found</p>}
         {areUsersDisplayed && (
           <InfiniteScroll
             dataLength={users.length}
