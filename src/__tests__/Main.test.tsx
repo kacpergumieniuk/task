@@ -37,4 +37,19 @@ describe('Main Component', () => {
 
     expect(input.value).toBe('testuser');
   });
+  it('renders LoadingSkeleton when loading is true and preventAction is false', () => {
+    (useQuery as jest.Mock).mockReturnValue({
+      data: null,
+      error: null,
+      isLoading: true,
+    });
+
+    render(<Main />);
+
+    const input = screen.getByLabelText(/GitHub Username/i);
+    fireEvent.change(input, { target: { value: 'test' } });
+
+    const loadingSkeleton = screen.getByTestId('loading-skeleton');
+    expect(loadingSkeleton).toBeTruthy();
+  });
 });
