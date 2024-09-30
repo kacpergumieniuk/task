@@ -9,6 +9,12 @@ import { LoadingSkeleton } from '@/components/LoadingSkeleton';
 import { User, UsersRes, fetchGitHubUsers } from '@/requests/requests';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
+//Uzyteczne techniki programowania funkcyjnego w kodzie:
+
+// Zastosowanie hooków do zarządzania stanem oraz efektami, co pozwala na bardziej deklaratywne podejście
+// Użycie debouncingu w celu optymalizacji wywołań API przy wyszukiwaniu użytkowników
+// Aktualizacja stanu użytkowników przy użyciu funkcji, co pozwala na łatwiejsze łączenie wyników
+
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
